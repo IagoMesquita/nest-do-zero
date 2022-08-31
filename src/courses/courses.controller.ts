@@ -10,10 +10,14 @@ import {
   Post,
   Res,
 } from '@nestjs/common';
+import { CoursesService } from './courses.service';
 
 // @Controller()
 @Controller('courses')
 export class CoursesController {
+  // Criar o constructor para receber a Instencia da classe Service readonly(apenas para leitura)
+  constructor(private readonly courseService: CoursesService) {}
+
   // @Get('courses')
   @Get()
   findAll() {
