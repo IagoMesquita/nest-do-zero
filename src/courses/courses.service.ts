@@ -19,4 +19,8 @@ export class CoursesService {
   findOne(id: string) {
     return this.courses.find((course: Course) => course.id === Number(id));
   }
+
+  create(createCourseDto: any) {
+    this.courses.push(createCourseDto);
+  }
 }
