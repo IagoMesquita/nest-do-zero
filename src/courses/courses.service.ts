@@ -40,7 +40,10 @@ export class CoursesService {
     const indexCourse = this.courses.findIndex(
       (course: Course) => course.id === Number(id),
     );
-    this.courses[indexCourse] = updateCourseDto;
+    this.courses[indexCourse] = {
+      ...this.courses[indexCourse],
+      ...updateCourseDto,
+    };
   }
 
   remove(id: string) {
