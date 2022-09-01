@@ -15,31 +15,26 @@ export class CoursesController {
 
   @Get()
   findAll() {
-    // return response.status(200).send('Lista de Cursos');
     return this.courseService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    // return `Curso #${id}`;
     return this.courseService.findOne(id);
   }
 
   @Post()
   create(@Body() body) {
-    // return body;
     this.courseService.create(body);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() body) {
-    // return `Atualização do curso #${id}`;
     return this.courseService.update(id, body);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    // return `Exclusão do Curso #${id}`;
     return this.courseService.remove(id);
   }
 }
