@@ -34,7 +34,7 @@ export class CoursesService {
     return course;
   }
 
-  create(createCourseDto: CreateCourseDto) {
+  create(createCourseDto) {
     this.courses.push(createCourseDto);
   }
 
